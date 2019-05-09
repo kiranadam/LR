@@ -14,21 +14,31 @@ class LR
 	private:
 		double alpha;     // learning rate
 		int epoch;        // maximum iterations
-		double lambda;    // L2 regularization
 		double tolerance; // error tolerance
-		rowvec w;         // weights 		
-		
+		vec W;            // weights 		
 		
 		double sigmoid(double x); // Defination for logistic function
 
-		double cost(vec &y, vec &h); // Defination for cost function
-
+		
 	public:
-		LR();
+		LR(); // default constructor
 
-		LR(int epoch, double alpha, double lambda, double tolerance);
+		LR(int epoch, double alpha,double tolerance);  // parameterized constructor
 
 		~LR();
+
+		double cost(vec y, vec h); // Defination for cost function
+
+		void train(mat X, vec y);  // defination to train a function
+
+		vec predict_prob(mat X);   //
+
+		vec predict(mat X);
+
+		vec getW();               // get Weights
+		
+		void setW(vec W);	  // set weights
+
 };
 
 
