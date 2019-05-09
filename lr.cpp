@@ -3,6 +3,7 @@
 #include "lr.hpp"
 #include <cmath>
 
+
 //Default Constructor 
 LR::LR()
 {
@@ -32,16 +33,25 @@ double LR::sigmoid(double x)
 	return 1.0/(1.0 + exp(-x));
 }
 
+
 // Cost function
-double LR::double cost(vec y, vec h)
+double LR::cost(vec y, vec h)
 {
 	int m = y.size();  // get the vector size
 	double c;
 	
 	for(size_t i=0; i<m; ++i)
 	{
-		c -= (y(i)*log2(h(i))+((1.0-y(i))*log2(1.0-h(i)));
+		c -= (y(i)*log2(h(i))+((1.0-y(i))*log2(1.0-h(i))); // calculate cost 
 	}
+
 	return c/m;
 }
-		      
+
+
+void LR::train(mat X, vec y)
+{
+	W = randu<rowvec>(X.n_cols+1); // weights initialization
+	mat X_ = 
+	
+}	      
