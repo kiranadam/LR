@@ -1,4 +1,4 @@
-# LR
+# Logistic Regression 
 
 This code is done in C++ using Armadillo library in Linux setup
 
